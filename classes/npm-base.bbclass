@@ -19,10 +19,6 @@ NPM_FLAGS ?= ""
 
 NPM_FLAGS_append_class-nativesdk = " --unsafe-perm"
 
-def npm_get_version():
-    import os
-    return os.popen("npm --v").read().split('.')
-
 # Target npm
 
 oe_runnpm() {
@@ -66,7 +62,7 @@ oe_runnpm() {
 
 	export HOME="${NPM_HOME_DIR}"
 
-	if [ "${@npm_get_version()[0]}" = "5" ]; then
+	if [ "$(echo ${NPM_VERSION} | cut -d. -f1)" = "5" ]; then
 		NPM_CACHE_CMD="verify"
 	fi
 
@@ -128,7 +124,7 @@ oe_runnpm_native() {
 
 	export HOME="${NPM_HOME_DIR_NATIVE}"
 
-	if [ "${@npm_get_version()[0]}" = "5" ]; then
+	if [ "$(echo ${NPM_VERSION} | cut -d. -f1)" = "5" ]; then
 		NPM_CACHE_CMD="verify"
 	fi
 
