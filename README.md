@@ -7,8 +7,8 @@ OpenEmbedded layer for latest [Node.js](https://nodejs.org/ "Node.js") releases.
 
 ## Node.js releases
 
- * ![Current 7](https://img.shields.io/badge/Node.js%20Current-7.10.0-green.svg)
- * ![LTS 6](https://img.shields.io/badge/Node.js%20LTS-6.10.3-blue.svg)
+ * ![Current 8](https://img.shields.io/badge/Node.js%20Current-8.4.0-green.svg)
+ * ![LTS 6](https://img.shields.io/badge/Node.js%20LTS-6.11.2-blue.svg)
  * ![Maintenance 4](https://img.shields.io/badge/Node.js%20Maintenance-4.8.3-B0C4DE.svg)
  * ![End of life 0.12](https://img.shields.io/badge/Node.js%20End%20of%20Life-0.12.18-lightgray.svg)
  * ![End of life 0.10](https://img.shields.io/badge/Node.js%20End%20of%20Life-0.10.48-lightgray.svg)
@@ -75,6 +75,13 @@ To build latest stable Node.js package:
 
 ```shell
 	bitbake nodejs
+```
+
+To select your preferred nodejs version,
+set the following variable in your local.conf:
+
+```
+PREFERRED_VERSION_nodejs = "8.x.x"
 ```
 
 ### Node.js as a dependency
